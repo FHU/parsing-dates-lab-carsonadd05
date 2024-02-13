@@ -26,7 +26,9 @@ def parse_month(month):
 def parse_date(user_string):
     parts = user_string.split()
     month = parse_month(parts[0])
-    day = parts[1][:-1]  # removing the comma
+    day = parts[1][:-1] 
+    if int(day) < 10:
+        day = "0" + day 
     year = parts[2]
     return f"{month}/{day}/{year}"
 
